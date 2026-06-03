@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* The flip card container - keeps the 3D space */
+  .flip-card {
+    background-color: transparent;
+    width: 380px;
+    height: 520px;
+    perspective: 1000px;
+    margin: 40px auto;
+    cursor: pointer;
+  }
+
+  /* This container is needed to position the front and back side */
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 4px;
+  }
+
+  /* Do an automatic smooth flip on hover/tap */
+  .flip-card:hover .flip-card-inner, .flip-card:active .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #faf8f5;
+  }
+
+  /* Style the front side (Watercolor Illustration) */
+  .flip-card-front {
+    background-image: url('5546964773303641393.jpeg'); /* References your custom watercolor image */
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Style the back side (Typography & Details) */
+  .flip-card-back {
+    color: #2c2927;
+    transform: rotateY(180deg);
+    border: 1px solid #e6e2dc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+    font-family: 'Georgia', serif;
+  }
+
+  /* Typography Styles */
+  .venue-session {
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-size: 8.5pt;
+    color: #8c857b;
+    margin-bottom: 15px;
+  }
+  .names {
+    font-size: 22pt;
+    font-weight: normal;
+    margin: 0 0 2px 0;
+    color: #1a1817;
+  }
+  .getting-married {
+    font-style: italic;
+    font-size: 10pt;
+    color: #c5a059;
+    margin: 0 0 25px 0;
+  }
+  .date {
+    font-size: 10pt;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+  }
+  .body-text {
+    font-size: 9.5pt;
+    line-height: 1.7;
+    color: #4a4542;
+    margin-bottom: 25px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+  .divider {
+    width: 30px;
+    border: 0;
+    border-top: 1px solid #c5a059;
+    margin: 0 auto 20px auto;
+  }
+  .label-title {
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1a1817;
+    margin-bottom: 2px;
+    font-weight: bold;
+  }
+  .label-val {
+    font-style: italic;
+    font-size: 9.5pt;
+    color: #6e6963;
+    margin: 0 0 20px 0;
+  }
+  .rsvp-val {
+    font-size: 9.5pt;
+    color: #2c2927;
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    
+    <!-- FRONT OF THE CARD -->
+    <div class="flip-card-front">
+      <!-- Your watercolor portrait sits beautifully here -->
+    </div>
+    
+    <!-- BACK OF THE CARD -->
+    <div class="flip-card-back">
+      <div class="venue-session">The Register Club Sessions</div>
+      <h1 class="names">Sam & Andy</h1>
+      <p class="getting-married">Are Getting Married</p>
+      
+      <p class="date">Saturday, 24 October 2026</p>
+      
+      <p class="body-text">
+        We are bypassing the giant wedding madness for an<br>
+        intimate celebration with <strong>just our closest friends</strong>.<br>
+        Join us at The Register Club, Edinburgh, for our ceremony,<br>
+        immediately followed by an evening of top-tier food,<br>
+        custom cocktails, and proper house music.
+      </p>
+      
+      <div class="divider"></div>
+      
+      <div class="label-title">Dress Code</div>
+      <p class="label-val">Glamorous, funky, and breathable.</p>
+      
+      <div class="label-title">RSVP</div>
+      <p class="rsvp-val">Hit us back by 1 August 2026</p>
+    </div>
+    
+  </div>
+</div>
+
+</body>
+</html>
